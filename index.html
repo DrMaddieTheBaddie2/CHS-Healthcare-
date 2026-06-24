@@ -203,7 +203,7 @@
 
   <main>
     <section class="hero" id="home">
-      <h1>CHS</h1>
+      <h1>Welcome to Community Health Services</h1>
       <p>
         Access community health service information, manage appointments, and connect
         with care teams through a clear NHS-inspired landing page.
@@ -264,22 +264,24 @@
   </nav>
 
   <script>
-    const navLinks = Array.from(document.querySelectorAll('.bottom-nav a'));
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = Array.from(document.querySelectorAll('.bottom-nav a'));
 
-    function updateCurrentLink() {
-      const activeHash = window.location.hash || '#home';
+      function updateCurrentLink() {
+        const activeHash = window.location.hash || '#home';
 
-      navLinks.forEach((link) => {
-        if (link.getAttribute('href') === activeHash) {
-          link.setAttribute('aria-current', 'location');
-        } else {
-          link.removeAttribute('aria-current');
-        }
-      });
-    }
+        navLinks.forEach((link) => {
+          if (link.getAttribute('href') === activeHash) {
+            link.setAttribute('aria-current', 'location');
+          } else {
+            link.removeAttribute('aria-current');
+          }
+        });
+      }
 
-    window.addEventListener('hashchange', updateCurrentLink);
-    updateCurrentLink();
+      window.addEventListener('hashchange', updateCurrentLink);
+      updateCurrentLink();
+    });
   </script>
 </body>
 </html>
