@@ -96,6 +96,32 @@
       max-width: 38rem;
     }
 
+    .section-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .section-card {
+      background: var(--surface);
+      border-left: 6px solid var(--nhs-blue);
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 12px 30px rgba(31, 41, 51, 0.08);
+    }
+
+    .section-card h2 {
+      margin: 0 0 0.5rem;
+      color: var(--nhs-dark);
+      font-size: 1.25rem;
+    }
+
+    .section-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
     .bottom-nav {
       position: fixed;
       left: 0;
@@ -156,7 +182,7 @@
 </head>
 <body>
   <header class="top-bar">
-    <div class="brand" aria-label="CHS brand">
+    <div class="brand">
       <div class="brand-mark">CHS</div>
       <div class="brand-copy">
         <strong>Community Health Services</strong>
@@ -166,29 +192,46 @@
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="home">
       <h1>CHS</h1>
       <p>
         A clean NHS-inspired landing page with a bold blue header, white branding,
         and an easy-to-use bottom navigation bar for quick access on mobile and desktop.
       </p>
     </section>
+
+    <div class="section-grid">
+      <section class="section-card" id="services">
+        <h2>Services</h2>
+        <p>Find quick links to staff information, patient care resources, and everyday service guidance.</p>
+      </section>
+
+      <section class="section-card" id="appointments">
+        <h2>Appointments</h2>
+        <p>Keep appointment information visible and easy to reach from the bottom navigation.</p>
+      </section>
+
+      <section class="section-card" id="contact">
+        <h2>Contact</h2>
+        <p>Share contact options for teams, departments, or support services in a clear NHS-inspired layout.</p>
+      </section>
+    </div>
   </main>
 
   <nav class="bottom-nav" aria-label="Primary navigation">
-    <a href="#home">
+    <a href="#home" aria-label="Home - navigate to homepage section">
       <span aria-hidden="true">⌂</span>
       <span>Home</span>
     </a>
-    <a href="#services">
+    <a href="#services" aria-label="Services - navigate to services section">
       <span aria-hidden="true">✚</span>
       <span>Services</span>
     </a>
-    <a href="#appointments">
+    <a href="#appointments" aria-label="Appointments - navigate to appointments section">
       <span aria-hidden="true">🗓</span>
       <span>Appointments</span>
     </a>
-    <a href="#contact">
+    <a href="#contact" aria-label="Contact - navigate to contact section">
       <span aria-hidden="true">☏</span>
       <span>Contact</span>
     </a>
