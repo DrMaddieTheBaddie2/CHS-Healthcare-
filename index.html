@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHS - Community Health Services</title>
+  <style>
+    :root {
+      --nhs-blue: #005eb8;
+      --nhs-dark: #003087;
+      --background: #f0f4f5;
+      --text: #1f2933;
+      --muted: #52606d;
+      --surface: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #e8f1f8 0%, var(--background) 100%);
+    }
+
+    .top-bar {
+      background: var(--nhs-blue);
+      color: #fff;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 2px 10px rgba(0, 48, 135, 0.2);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .brand-mark {
+      padding: 0.35rem 0.75rem;
+      border: 3px solid #fff;
+      font-size: clamp(1.6rem, 4vw, 2.25rem);
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .brand-copy strong {
+      font-size: 1.05rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .brand-copy span {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 7rem;
+    }
+
+    .hero {
+      background: var(--surface);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 16px 40px rgba(31, 41, 51, 0.08);
+    }
+
+    .hero h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(2.25rem, 7vw, 3rem);
+      line-height: 1.2;
+      color: var(--nhs-blue);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--muted);
+      max-width: 38rem;
+    }
+
+    .section-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .section-card {
+      background: var(--surface);
+      border-left: 6px solid var(--nhs-blue);
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 12px 30px rgba(31, 41, 51, 0.08);
+    }
+
+    .section-card h2 {
+      margin: 0 0 0.5rem;
+      color: var(--nhs-dark);
+      font-size: 1.25rem;
+    }
+
+    .section-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+      padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+      background: var(--surface);
+      border-top: 4px solid var(--nhs-blue);
+      box-shadow: 0 -6px 24px rgba(31, 41, 51, 0.12);
+    }
+
+    .bottom-nav a {
+      display: grid;
+      gap: 0.25rem;
+      justify-items: center;
+      padding: 0.65rem 0.5rem;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--nhs-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .bottom-nav a:hover,
+    .bottom-nav a:focus-visible {
+      background: #e8f1f8;
+      outline: none;
+    }
+
+    @media (max-width: 640px) {
+      .brand {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .hero {
+        padding: 1.5rem;
+      }
+
+      .bottom-nav {
+        gap: 0.35rem;
+        padding-inline: 0.5rem;
+      }
+
+      .bottom-nav a {
+        font-size: 0.78rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="top-bar">
+    <div class="brand">
+      <div class="brand-mark">CHS</div>
+      <div class="brand-copy">
+        <strong>Community Health Services</strong>
+        <span>Trusted care information for hospital teams</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <h1>Welcome to Community Health Services</h1>
+      <p>
+        Access community health service information, manage appointments, and connect
+        with care teams through a clear NHS-inspired landing page.
+      </p>
+    </section>
+
+    <div class="section-grid">
+      <section class="section-card" id="services">
+        <h2>Services</h2>
+        <p>Find quick links to staff information, patient care resources, and everyday service guidance.</p>
+      </section>
+
+      <section class="section-card" id="appointments">
+        <h2>Appointments</h2>
+        <p>Keep appointment information visible and easy to reach from the bottom navigation.</p>
+      </section>
+
+      <section class="section-card" id="contact">
+        <h2>Contact</h2>
+        <p>Share contact options for teams, departments, or support services in a clear NHS-inspired layout.</p>
+      </section>
+    </div>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Primary navigation">
+    <a href="#home">
+      <span>Home</span>
+    </a>
+    <a href="#services">
+      <span>Services</span>
+    </a>
+    <a href="#appointments">
+      <span>Appointments</span>
+    </a>
+    <a href="#contact">
+      <span>Contact</span>
+    </a>
+  </nav>
+</body>
+</html>
