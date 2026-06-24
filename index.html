@@ -229,29 +229,5 @@
     </a>
   </nav>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const navLinks = Array.from(document.querySelectorAll('.bottom-nav a'));
-
-      function updateCurrentLink() {
-        if (!window.location.hash) {
-          window.history.replaceState(null, '', '#home');
-        }
-
-        const activeHash = window.location.hash;
-
-        navLinks.forEach((link) => {
-          if (link.getAttribute('href') === activeHash) {
-            link.setAttribute('aria-current', 'location');
-          } else {
-            link.removeAttribute('aria-current');
-          }
-        });
-      }
-
-      window.addEventListener('hashchange', updateCurrentLink);
-      updateCurrentLink();
-    });
-  </script>
 </body>
 </html>
